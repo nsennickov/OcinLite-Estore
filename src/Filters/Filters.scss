@@ -1,0 +1,48 @@
+.filters-wrapper{
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.title-active{
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 2.2rem;
+    &:after{
+        display: block;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: lightgray;
+        margin-top: 10px;
+    }
+}
+
+.page-active{
+
+    &:after{
+        display: none;
+    }
+}
+
+
+.filters-ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    
+}
+
+.filter-item{
+    padding: 15px 15px;
+    color: #b3b3b3;
+    border-bottom: 1px solid lightgray;
+    font-size: 1.2rem;
+    &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+        border-bottom: 1px solid #383838;
+        color: #383838;
+    }
+}

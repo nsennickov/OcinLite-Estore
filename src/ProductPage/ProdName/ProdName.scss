@@ -1,0 +1,138 @@
+
+.name-wrapper{
+    width: 100%;
+}
+
+.name-nav{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #b3b3b3;
+    font-size: 0.75rem;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.2);
+
+    span{
+        &:hover{
+            border-bottom: 1px solid lightgrey;
+        }
+
+    }
+    a{
+        color: #b3b3b3;
+        text-decoration: none;
+    }
+}
+
+.price-wrap{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.2);
+    padding: 40px;
+
+    h1{
+        font-weight: 500;
+    }
+
+    h3{
+        margin: 0;
+        font-size: 1.6rem;
+        color: #0c9878;
+    }
+}
+
+.count-wrap{
+    width: 100%;
+    min-height: 170px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.2);
+}
+
+.input-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    min-height: 50px;
+    
+}
+
+.input-count{
+    width: 30%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 1.6rem;
+    outline: black;
+}
+
+.add-btn{
+    background-color: #0c9878;
+    color: white;
+    width: 40%;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+
+
+.social-icons{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+
+
+    img{
+        width: 35px;
+        height: 35px;
+        margin-left: 1.2rem;
+    }
+}
+
+
+@media screen and(min-width: 768px){
+    .count-wrap{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 80px;
+        padding: 10px 60px;
+    }
+
+
+    .input-wrapper{
+        justify-content: center;
+    }
+    .input-count{
+        max-width: 120px;
+    }
+    .add-btn{
+        margin-left: 20px;
+        max-width: 120px;
+    }
+
+    .social-icons{
+        justify-content: flex-end;
+    }
+}
