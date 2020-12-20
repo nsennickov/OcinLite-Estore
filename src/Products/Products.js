@@ -32,7 +32,7 @@ class Product extends Component{
             onMouseEnter={this.hoverHandler} 
             onMouseLeave={this.leaveHandler}
             >
-                <Link to='/products' className="photo-wrapper" onClick={() => this.props.openPage(this.props.id)}>
+                <Link to={`/products/${this.props.id}`} className="photo-wrapper" onClick={() => this.props.openPage(this.props.id)}>
                     <img src={this.state.isHover ? hoverImg : defaultImg} className="card-photo" alt="prod_photo"/>
                 </Link>
                 <div className="card-footer">

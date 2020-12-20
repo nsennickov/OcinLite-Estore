@@ -2,7 +2,7 @@ import React from 'react'
 import './Slider.scss';
 
 const Slider = (props) => {
-
+    console.log(props);
     let state = {
         count: 0
     }

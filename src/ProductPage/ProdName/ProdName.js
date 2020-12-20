@@ -26,11 +26,14 @@ const ProdName = (props) => {
 
 
     const getCountHandler = () => {
+
+        let count = 1;
+
         return(
             <div className="count-wrap">
                 <div className="input-wrapper">
-                    <input type="number" value="1" className="input-count"></input>
-                    <div className="add-btn">Add to cart</div>
+                    <input type="number" max='10' placeholder="1" className="input-count" onChange={(e) => {count = Number(e.target.value)}}></input>
+                    <div className="add-btn" onClick={() => props.addToCart(props.prod.id, count)}>Add to cart</div>
                 </div>
                 <div className="social-icons">
                     <img src="https://www.flaticon.com/svg/static/icons/svg/733/733579.svg" alt="social-icons" ></img>

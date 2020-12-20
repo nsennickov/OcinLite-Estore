@@ -103,18 +103,18 @@ class App extends Component {
 
 
 	//CART -----------------------------------
-	addToCart = (id) => {
+	addToCart = (id, count=1) => {
 		let newProdInCart = allProducts.find(elem => {
 			return elem.id === id
 		})
-		console.log(newProdInCart);
+
 		let cart = this.state.cart;
 		
 		if(!cart.includes(newProdInCart)){
 			cart.push(newProdInCart)
 		}
 
-		newProdInCart.inCart++;
+		newProdInCart.inCart += count;
 
 		let moneyInCart = 0; 
 		let cartLength = 0;
@@ -131,28 +131,27 @@ class App extends Component {
 		})
 	}
 
-	componentWillUpdate(prevProps, prevState){
-		if(window.location.pathname === '/products'){
-			localStorage.setItem('product', prevState.currProdPageID)
-		}
-	}
+	UNSAFE_componentWillMount = () => {
+		let pathName = window.location.pathname.split('/').filter(elem => {if(elem !== 'products') return elem}).join()
 
-	getProductIdWhenReaload = () => {
-		if(window.location.pathname === '/products'){
-			console.log(11213);
-			let prodId = localStorage.getItem('product');
-			return prodId
+		if(!this.state.currProdPageID && pathName){
+			let prodToShowAfterReload = this.state.products.find(elem => {
+				if(elem.id === pathName){
+					return elem
+				}
+			})
+
+			this.setState({
+				currProdPage: prodToShowAfterReload
+			})
 		}
 	}
-	
   
   
     render() {
 
 		const pageCounter = Math.ceil(this.state.products.length / 14);
 		const whatPageIsActive = Math.floor(this.state.pagination[1] / 14);
-		let prodId;
-		window.onload = this.getProductIdWhenReaload()
 
 		return(
 			<div className="App">
@@ -180,13 +179,14 @@ class App extends Component {
 
 
 					{/* ROUTE FOR SHOW SINGLE PRODUCT PAGE */}
-					<Route exact path="/products" component={
+					<Route path="/products" component={
 						ProductPage.bind(this, {
 							//Props for product page
-						props: this.state.currProdPageID,
+						props: this.state.currProdPage,
 						navHandl: this.changeNavHandler,
 						descHandler: this.descriptionHandler.bind(this),
 						reviews: this.state.reviews,
+						addToCart: this.addToCart,
 					})} />
 
 

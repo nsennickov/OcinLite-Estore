@@ -5,7 +5,7 @@ import Product from "./Products/Products";
 import Pagination from "./Pagination";
 
 const MainPage = (props) => {
-	console.log(props);
+	// console.log(props);
     return(
         <Wrapper>
             <Filters filterHandler={props.filterHandler} title={props.title}/>

@@ -15,6 +15,7 @@
     display: flex;
     position: relative;
     transition: .3s;
+    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.2);
 
     img{
         width: 100%;
@@ -59,6 +60,8 @@
     img{
         margin-left: 10px;
         width: 20%;
+        max-width: 120px;
+        max-height: 120px;
         height: 100%;
     }
     img:nth-child(1){
